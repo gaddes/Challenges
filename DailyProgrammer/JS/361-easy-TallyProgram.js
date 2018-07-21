@@ -1,37 +1,33 @@
-// 1- write function that accepts STRING as input, STRING as output
-// 2-
+function countLetter(inputString, letter) {
+  const reLower = new RegExp(letter.toLowerCase(), 'g');
+  const reUpper = new RegExp(letter.toUpperCase(), 'g');
+  const finalCount = (inputString.match(reLower)||[]).length - (inputString.match(reUpper)||[]).length; // lowercase - uppercase
 
-// create an array for each letter
-// loop through input string one letter at a time, counting the number of times each character is used
-// add this value to an
-// for each letter, output array.count
-
-// Count number of occurences of character in string - https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-character-in-a-string-in-javascript
-
-function countLetters(letter) {
-
-  return ("this is foo bar".match(/a/g)||[]).length
+  return finalCount;
 }
 
 let tallyHo = (inputString) => {
+  const countA = countLetter(inputString, "a");
+  const countB = countLetter(inputString, "b");
+  const countC = countLetter(inputString, "c");
+  const countD = countLetter(inputString, "d");
+  const countE = countLetter(inputString, "e");
 
-  const countA = (inputString.match(/a/g)||[]).length - (inputString.match(/A/g)||[]).length;
-  const countB = (inputString.match(/b/g)||[]).length - (inputString.match(/B/g)||[]).length;
-  const countC = (inputString.match(/c/g)||[]).length - (inputString.match(/C/g)||[]).length;
-  const countD = (inputString.match(/d/g)||[]).length - (inputString.match(/D/g)||[]).length;
-  const countE = (inputString.match(/e/g)||[]).length - (inputString.match(/E/g)||[]).length;
-  let outputString = `a:${countA}, b:${countB}, c:${countC}, d:${countD}, e:${countE}`;
-
-  console.log('countA = ', countA);
+  const outputString = `a:${countA}, b:${countB}, c:${countC}, d:${countD}, e:${countE}`;
 
   return outputString;
 }
 
-tallyHo("aaaAA");
+tallyHo("dbbaCEDbdAacCEAadcB");
 
-("this is foo bar".match(/o/g)||[]).length
+// NOTE: this does not return output in order of highest -> lowest. To do this, we could create a key:value pair for each letter, and return a string showing the KEY (a, b, c...) and the associated VALUE (1, 2, 3...) in order.
 
-var stringOne = "this is a string";
+/*
+ * Notes below!
+ */
 
-stringOne.match()
-// Note: It took me a little while to realize what ||[] was doing but this answer is great! For anyone else scratching their heads, match() returns null if no matches are found and ||[] will return a 0 length array if the match() returns null, meaning length() will return 0 instead of producing a type error. – Nathan Sep 20 '12 at 6:27
+// Count number of occurences of character in string - https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-character-in-a-string-in-javascript
+
+// Create new RegEx - https://stackoverflow.com/questions/3172985/javascript-use-variable-in-string-match
+
+// match() function - "It took me a little while to realize what ||[] was doing but this answer is great! For anyone else scratching their heads, match() returns null if no matches are found and ||[] will return a 0 length array if the match() returns null, meaning length() will return 0 instead of producing a type error." – Nathan Sep 20 '12 at 6:27
