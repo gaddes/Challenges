@@ -1,0 +1,23 @@
+{
+  "name": "api-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch ./resources/scss -o ./resources/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/gaddes/api-task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/gaddes/api-task/issues"
+  },
+  "homepage": "https://gitlab.com/gaddes/api-task#readme",
+  "dependencies": {
+    "node-sass": "^4.9.3"
+  }
+}
