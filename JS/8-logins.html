@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>logins</title>
+</head>
+<body>
+    <input id="username" type="text" placeholder="username">
+    <input id="password" type="text" placeholder="password">
+    <button id="enter" onclick="validate('username', 'password')">Enter</button>
+</body>
+
+<script>
+    const validate = (user, pass) => {
+        const logins = new Map(); // map containing valid logins in the form of (key, value)
+        logins.set('mgaddes', 'qwerty');
+        const userLogin = document.querySelector("#username").value; // username entered by user
+        const userPass = document.querySelector("#password").value; // password entered by user
+        
+        console.log(userLogin);
+        console.log(userPass);
+
+        // check if login entered exists in logins
+        for (var [key, value] of logins) {
+            if (key === userLogin && value === userPass) {
+                console.log("you're in!");
+            } else {
+                console.log("try again!");
+            }
+        }
+    }
+</script>
+</html>
