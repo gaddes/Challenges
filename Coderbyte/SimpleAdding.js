@@ -10,3 +10,4 @@ function SimpleAdding(num) {
 }
 
 SimpleAdding(140);
+console.log(SimpleAdding(140));

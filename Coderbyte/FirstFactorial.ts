@@ -4,8 +4,8 @@
 function FirstFactorial(num : number) {
     let count : number = num;
     while (count > 1) {
-       count -= 1;
-       num = num * count;
+      count -= 1;
+      num = num * count;
     }
     return num;
 }
